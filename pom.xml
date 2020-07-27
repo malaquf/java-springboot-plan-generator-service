@@ -9,7 +9,7 @@
 		<version>2.3.1.RELEASE</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.lendico.services</groupId>
+	<groupId>com.malaquf.services</groupId>
 	<artifactId>plan-generator-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>plan-generator-service</name>
@@ -93,7 +93,7 @@
 						</execution>
 					</executions>
 					<configuration>
-						<repository>lendico/${project.artifactId}</repository>
+						<repository>fmalaquias/${project.artifactId}</repository>
 						<tag>latest</tag>
 						<buildArgs>
 							<JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
