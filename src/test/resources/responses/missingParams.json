@@ -1,0 +1,20 @@
+{
+    "errors": [
+        {
+            "code": 3,
+            "message": "Missing loan amount."
+        },
+        {
+            "code": 2,
+            "message": "Missing loan duration."
+        },
+        {
+            "code": 4,
+            "message": "Missing nominal rate."
+        },
+        {
+            "code": 5,
+            "message": "Missing start date."
+        }
+    ]
+}

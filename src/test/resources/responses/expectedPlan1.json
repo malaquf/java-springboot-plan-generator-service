@@ -1,52 +1,3 @@
-# Plan Generator Service
-This is an example of a Spring Boot microservice for generating repayment plans throughout the lifetime of a loan. 
-In this example, it's displayed how to create microservices using SpringBoot and Java, as well as writting unit tests using JUnit5 for it, as well as how to automate the creation of docker images for SpringBoot services using Spotify's Docker file maven plugin.
-We can also see in this example, a basic architecture for a stateless simple Microservice (without DB usage for simplification), where distributed logging is used with Spring Sleuth + Zipkins, as well as some design patterns usage like chain of responsability for the request validators object builders.
-
-### Dependencies
-* Java 8
-* SpringBoot (Sleuth, Zipkin, Web)
-* Apache Commons Lang
-* Maven
-* Docker
-* Spotify Docker File Maven Plugin
-* Lombok has been used for simplification for removing boiler plate code. Click [here](https://projectlombok.org/setup/overview) for detailed steps on how to install it for your IDE (Eclipse, IntelliJ, etc).
-
-### Setup
-
-```
-mvn clean install
-docker run -itd -p 8060:8060 lendico/plan-generator-service
-```
-
-### Optional 
-Zipkin is preconfigured in the project for demo purpose (for possible deployment on cloud env). For using it, just download and start the following image:
-
-```
-docker run -itd --name trace -p 9411:9411 openzipkin/zipkin
-```
-
-### Usage
-After starting the docker container running the plan-generator-service you can submit a request like the following example using curl:
-
-```
-curl localhost:8060/generate-plan -X POST -H "Content-Type: application/json" -d '{"loanAmount": 5000,"nominalRate": 5.0,"duration": 24,"startDate": "2018-01-01T00:00:01Z"}'
-```
-
-Formatted JSON request:
-
-```json
-{
- "loanAmount": "5000",
- "nominalRate": "5.0",
- "duration": 24,
- "startDate": "2018-01-01T00:00:01Z"
-}
-```
-
-A loan plan for the example above should be equal to:
-
-```json
 {
   "borrowerPayments": [
       {
@@ -243,4 +194,3 @@ A loan plan for the example above should be equal to:
       }
   ]
 }
-```
