@@ -16,7 +16,7 @@ We can also see in this example, a basic architecture for a stateless simple Mic
 
 ```
 mvn clean install
-docker run -itd -p 8060:8060 lendico/plan-generator-service
+docker run -itd -p 8060:8060 fmalaquias/plan-generator-service
 ```
 
 ### Optional 
